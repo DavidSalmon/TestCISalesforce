@@ -20,7 +20,7 @@ jobs:
         run: 'sfdx force:org:create -f ./config/project-scratch-def.json -a pullReqTest'
       - name: Push data
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:source:push -u pullReqTest'
+        run: '\cp .forceignore_ci .forceignore && sfdx force:source:push -u pullReqTest'
       - name: Execute tests
         working-directory: ${{ github.workspace }}
         run: 'sfdx force:apex:test:run -c  -r json > $TEST_FILE'
