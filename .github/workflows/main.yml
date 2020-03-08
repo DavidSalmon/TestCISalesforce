@@ -14,7 +14,7 @@ jobs:
         run: openssl enc -d -aes-256-cbc -in dev-hub-login.txt.enc -out dev-hub-login.txt -md sha256 -k $DEVBOXPASS
       - name: Login devhub
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:org:list --clean && sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
+        run: 'sfdx force:org:list --clean -p && sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
       - name: Create scratch org
         working-directory: ${{ github.workspace }}
         run: 'sfdx force:org:create -f ./config/project-scratch-def.json -a scratchForTests'
