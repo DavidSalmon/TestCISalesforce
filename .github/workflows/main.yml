@@ -23,6 +23,6 @@ jobs:
         run: '\cp .forceignore_ci .forceignore && sfdx force:source:push -u scratchForTests'
       - name: Execute tests
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:apex:test:run -u david.salmon@niji.fr.testcitotal -c  -r json > testResults.json'
+        run: 'sfdx force:apex:test:run -u david.salmon@niji.fr.testcitotall -c  -r json > testResults.json'
       - name: Delete scratch org
         run: 'sfdx force:org:delete -u scratchForTests'
