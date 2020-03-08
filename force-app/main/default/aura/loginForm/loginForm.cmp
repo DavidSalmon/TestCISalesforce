@@ -5,6 +5,7 @@
     <aura:attribute name="startUrl" type="String" required="false" description="The url you go to after a successful login" />
     <aura:attribute name="usernameLabel" type="String" required="false" default="Username"/>
     <aura:attribute name="passwordLabel" type="String" required="false" default="Password"/>
+    
     <aura:attribute name="loginButtonLabel" type="String" required="false" default="Log in"/>
     <aura:attribute name="expid" type="String" required="false" description="The branding experience ID" />        
     <aura:attribute name="forgotPasswordLabel" type="String" required="false" default="Forgot your password?"/>
