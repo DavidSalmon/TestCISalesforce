@@ -9,7 +9,7 @@ jobs:
       - name: Set variables
         run: 'echo "::set-env name=TEST_FILE::testResults-$(date).json"'
       - name: Decript
-        run: openssl enc -d -aes-256-cbc -in ./dev-hub-login.txt.enc -out ./dev-hub-login.txt -k $DEVBOXPASS
+        run: openssl enc -d -aes-256-cbc -in ../TestCISalesforce/dev-hub-login.txt.enc -out ../TestCISalesforce/dev-hub-login.txt -k $DEVBOXPASS
       - name: Login devhub
         run: 'sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
       - name: Create scratch org
