@@ -6,7 +6,7 @@ on:
     push:
         types: [synchronise]
         branches:
-            - dev
+            - master
         paths:
             - 'force-app/**'
 
