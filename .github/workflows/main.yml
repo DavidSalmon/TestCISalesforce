@@ -4,6 +4,8 @@ jobs:
   deploy-dev:
     runs-on: self-hosted
     steps:
+      - name: Test
+        run: 'ls -al'
       - name: Set variables
         run: 'echo "::set-env name=TEST_FILE::testResults-$(date).json"'
       - name: Decript
