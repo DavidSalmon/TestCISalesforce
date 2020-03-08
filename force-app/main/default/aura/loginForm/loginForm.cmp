@@ -7,7 +7,6 @@
     <aura:attribute name="passwordLabel" type="String" required="false" default="Password"/>
     <aura:attribute name="loginButtonLabel" type="String" required="false" default="Log in"/>
     <aura:attribute name="expid" type="String" required="false" description="The branding experience ID" />        
-    
     <aura:attribute name="forgotPasswordLabel" type="String" required="false" default="Forgot your password?"/>
     <aura:attribute name="selfRegisterLabel" type="String" required="false" default="Not a member?"/>
     <aura:attribute name="forgotPasswordUrl" type="String" required="false" default="/ForgotPassword"/>
