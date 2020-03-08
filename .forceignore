@@ -1,0 +1,65 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+package.xml
+
+# LWC configuration files
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+# 06/03 - D.SALMON : Ajout pour éviter les erreurs de push
+
+**\ChannelProgramLevelName.field-meta.xml
+**\ChannelProgramName.field-meta.xml
+**\IsCustomerPortal.field-meta.xml
+**\IsPartner.field-meta.xml
+
+**\navigationMenus\**
+**\appMenus\**
+**\profilePasswordPolicies\**
+**\profileSessionSettings\**
+
+**\ExperienceBundle.settings
+**\FieldService.settings
+**\IoT.settings
+**\Search.settings-meta.xml
+
+**\profiles\Admin.profile-meta.xml
+**\profiles\Analytics Cloud Integration User.profile-meta.xml
+**\profiles\Analytics Cloud Security User.profile-meta.xml
+**\profiles\Authenticated Website.profile-meta.xml
+**\profiles\Chatter*
+**\profiles\Company Communities User.profile-meta.xml
+**\profiles\ContractManager.profile-meta.xml
+**\profiles\ContractManager.profile-meta.xml
+**\profiles\CPQ Integration User.profile-meta.xml
+**\profiles\Cross Org Data Proxy User.profile-meta.xml
+**\profiles\Custom*
+**\profiles\Force*
+**\profiles\Gold Partner User.profile-meta.xml
+**\profiles\Guest.profile-meta.xml
+**\profiles\High*
+**\profiles\Identity*
+**\profiles\Luxembourg - B2B Profile.profile-meta.xml
+**\profiles\Luxembourg - B2B2C Profile.profile-meta.xml
+**\profiles\MarketingProfile.profile-meta.xml
+**\profiles\Partner*
+**\profiles\PlatformPortal.profile-meta.xml
+**\profiles\ReadOnly.profile-meta.xml
+**\profiles\Silver Partner User.profile-meta.xml
+**\profiles\SolutionManager.profile-meta.xml
+**\profiles\Standard.profile-meta.xml
+**\profiles\StandardAul.profile-meta.xml
+**\profiles\Work%2Ecom Only User.profile-meta.xml
+**\profiles\External Identity User.profile-meta.xml
+
+**\settings\Case.settings-meta.xml
+**\settings\Analytics.settings-meta.xml
+**\settings\Pardot.settings
+**\settings\PlatformEncryption.settings
+**\settings\Territory2.settings
+**\settings\EncryptionKey.settings-meta.xml

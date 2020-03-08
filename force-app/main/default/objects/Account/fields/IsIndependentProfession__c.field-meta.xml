@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IsIndependentProfession__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Is the company a &quot;profession libérale&quot; (no vat number)</description>
+    <externalId>false</externalId>
+    <label>IsIndependentProfession</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

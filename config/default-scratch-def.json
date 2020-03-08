@@ -1,0 +1,22 @@
+{
+    "orgName": "total_scratch_org_1",
+    "edition": "Enterprise",
+    "features": ["Communities"],
+    "settings": {
+        "communitiesSettings": {
+            "enableNetworksEnabled": true
+        },
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": true
+        },
+        "omniChannelSettings": {
+            "enableOmniChannel": true
+        },
+        "caseSettings": {
+            "systemUserEmail": "amadou.dem@niji.fr"
+        }
+    }
+  }
