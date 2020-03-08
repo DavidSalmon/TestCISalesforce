@@ -17,7 +17,7 @@ jobs:
         run: 'sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
       - name: Create scratch org
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:org:create -f project-scratch-def.json -a pullReqTest'
+        run: 'sfdx force:org:create -f ./config/project-scratch-def.json -a pullReqTest'
       - name: Push data
         working-directory: ${{ github.workspace }}
         run: 'sfdx force:source:push -u pullReqTest'
