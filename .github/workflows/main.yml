@@ -1,0 +1,33 @@
+# Unique name for this workflow
+name: Devhub deployement
+
+# Definition when the workflow should run
+on:
+    push:
+        types: [synchronise]
+        branches:
+            - dev
+        paths:
+            - 'force-app/**'
+
+# Jobs to be executed
+jobs:
+    deploy-dev:
+        runs-on: self-hosted
+        steps:
+            - name: 'Set variables'
+              run: echo "::set-env name=TEST_FILE::"testResults-$(date).json"
+            - name: 'Decript'
+              run: openssl enc -d -aes-256-cbc -in dev-hub-login.txt.enc -out dev-hub-login.txt -k $DEVBOXPASS
+            - name: 'Login devhub'
+              run: sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org
+            # Create scratch org
+            - name: 'Create scratch org'
+              run: sfdx force:org:create -f project-scratch-def.json -a pullReqTest
+              
+            # Push the code into the scratch org
+            - name: 'Push data'
+              run: sfdx force:source:push -u pullReqTest
+              
+            - name: 'Execute tests'
+              run: sfdx force:apex:test:run -c  -r json > ${{TEST_FILE}}
