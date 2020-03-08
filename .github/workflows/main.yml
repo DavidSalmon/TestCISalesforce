@@ -5,7 +5,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Set variables
-        run: 'echo "::set-env name=TEST_FILE::"testResults-$(date).json"'
+        run: 'echo "::set-env name=TEST_FILE::testResults-$(date).json"'
       - name: Decript
         run: openssl enc -d -aes-256-cbc -in dev-hub-login.txt.enc -out dev-hub-login.txt -k $DEVBOXPASS
       - name: Login devhub
