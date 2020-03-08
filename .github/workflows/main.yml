@@ -17,7 +17,7 @@ jobs:
         run: 'sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
       - name: Create scratch org
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:org:create --targetdevhubusername david.salmon@niji.fr.testCITotal -f ./config/project-scratch-def.json -a scratchForTests'
+        run: 'sfdx force:org:create -f ./config/project-scratch-def.json -a scratchForTests'
       - name: Push data
         working-directory: ${{ github.workspace }}
         run: '\cp .forceignore_ci .forceignore && sfdx force:source:push -u scratchForTests'
