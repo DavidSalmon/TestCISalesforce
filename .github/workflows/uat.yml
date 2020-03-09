@@ -1,6 +1,9 @@
 name: Devhub deployement
 on:  [push]
-  types: [completed]
+page_build:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - completed
 jobs:
   deploy-uat:
     runs-on: self-hosted

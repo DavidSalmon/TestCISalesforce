@@ -1,6 +1,9 @@
 name: Devhub deployement
 on:  [pull_request]
-  types: [created]
+page_build:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
 jobs:
   deploy-dev:
     runs-on: self-hosted
