@@ -2,7 +2,7 @@ name: Tests Unitaires
 on: 
   pull_request:
     types: # This configuration does not affect the page_build event above
-      - created
+      - opened
 jobs:
   deploy-dev:
     runs-on: self-hosted
