@@ -16,4 +16,4 @@ jobs:
         run: 'sfdx force:source:convert -d  packageUAT/'
       - name: Déploiement
         working-directory: ${{ github.workspace }}
-        run: 'sfdx force:mdapi:deploy -u orgUAT -w 10 -d .\packageUAT\'
+        run: 'sfdx force:mdapi:deploy -u orgUAT -w 10 -d packageUAT'
