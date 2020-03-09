@@ -1,4 +1,4 @@
-name: Devhub deployement
+name: UAT deployement
 on:  [push]
 jobs:
   deploy-uat:
