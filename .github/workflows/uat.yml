@@ -1,0 +1,20 @@
+name: Devhub deployement
+on:  [push]
+  types: [completed]
+jobs:
+  deploy-uat:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - name: Decript
+        working-directory: ${{ github.workspace }}
+        run: openssl enc -d -aes-256-cbc -in uat-login.txt.enc -out uat-login.txt -md sha256 -k $DEVBOXPASS
+      - name: Login uat
+        working-directory: ${{ github.workspace }}
+        run: 'sfdx force:auth:sfdxurl:store -f uat-login.txt -d -a orgUAT'
+      - name: Create package
+        working-directory: ${{ github.workspace }}
+        run: 'sfdx force:source:convert -d  packageUAT/'
+      - name: Déploiement
+        working-directory: ${{ github.workspace }}
+        run: 'sfdx force:mdapi:deploy -u orgUAT -w 10 -d .\packageUAT\'
