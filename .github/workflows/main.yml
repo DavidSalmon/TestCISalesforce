@@ -14,7 +14,7 @@ jobs:
         run: 'echo "::set-env name=TEST_FILE::testResults-$(date).json"'
       - name: Decript
         working-directory: ${{ github.workspace }}
-        run: openssl enc -d -aes-256-cbc -in dev-hub-login.txt.enc -out dev-hub-login.txt -md sha256 -k $DEVBOXPASS
+        run: openssl enc -d -aes-256-cbc -in dev-hub-login.txt.enc -out dev-hub-login.txt -md sha256 -k ${{ secrets.ORG_URL_PASS }}
       - name: Login devhub
         working-directory: ${{ github.workspace }}
         run: 'sfdx force:org:list --clean -p && sfdx force:auth:sfdxurl:store -f dev-hub-login.txt -d -a Hub_Org'
